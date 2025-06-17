@@ -213,7 +213,7 @@ public class OrgServiceImpl implements OrgService {
             headers.put(Constants.X_CHANNEL_ID, orgId);
             StringBuilder strUrl = new StringBuilder(cbServerProperties.getKnowledgeMS());
             strUrl.append(cbServerProperties.getFrameworkCopy()).append("/");
-            strUrl.append(includeOrgId ? orgId + "_" + masterFramework : masterFramework);
+            strUrl.append(masterFramework);
             log.info("Printing URL for copy: {}", strUrl);
             log.info("Printing request: {}", request);
             Map<String, Object> frameworkResponse = (Map<String, Object>) outboundRequestHandlerServiceImpl.fetchResultUsingPost(
